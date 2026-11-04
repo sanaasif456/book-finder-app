@@ -1,0 +1,158 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6fb;
+  color: #222;
+}
+
+nav {
+  background-color: #29649c;
+  color: white;
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+nav h2 {
+  font-size: 30px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #93c5fd;
+}
+
+h1 {
+  text-align: center;
+  margin: 30px 0;
+  color: #172554;
+}
+
+input {
+  padding: 12px;
+  width: 500px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #2563eb;
+}
+
+button {
+  padding: 12px 20px;
+  background-color: #384c78;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 8px;
+  font-size: 15px;
+}
+
+button:hover {
+  background-color: #293c72;
+}
+
+.books-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 30px 40px;
+}
+
+.book-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+.book-card img {
+  width: 140px;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.book-card h3 {
+  margin-bottom: 10px;
+  color: #173b54;
+}
+
+.book-card p {
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.book-card a {
+  display: inline-block;
+  margin: 12px 0;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.book-card a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  nav {
+    padding: 15px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  input {
+    width: 65%;
+  }
+
+  .books-container {
+    padding: 20px;
+  }
+}
+
+.search-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 25px auto 35px;
+}
+
+.search-container input {
+  width: 350px;
+  max-width: 70%;
+  margin: 0;
+}
+
+.search-container button {
+  margin: 0;
+}
