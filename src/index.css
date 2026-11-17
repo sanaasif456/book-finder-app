@@ -156,3 +156,17 @@ button:hover {
 .search-container button {
   margin: 0;
 }
+.back-button {
+  display: inline-block;
+  margin: 25px 40px;
+  padding: 10px 18px;
+  background-color: #172554;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.back-button:hover {
+  background-color: #2563eb;
+}

@@ -8,8 +8,13 @@ function SearchBar({ search, setSearch, onSearch }) {
     searchInputRef.current.focus();
   }, []);
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    onSearch();
+  }
+
   return (
-    <div className="search-container">
+    <form className="search-container" onSubmit={handleSubmit}>
       <input
         ref={searchInputRef}
         type="text"
@@ -18,10 +23,10 @@ function SearchBar({ search, setSearch, onSearch }) {
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      <button onClick={onSearch}>
+      <button type="submit">
         Search
       </button>
-    </div>
+    </form>
   );
 }
 

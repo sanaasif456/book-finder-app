@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function BookDetails() {
   const { id } = useParams();
@@ -40,6 +41,9 @@ function BookDetails() {
 
   return (
     <div>
+      <Link to="/" className="back-button">
+      ← Back to Home
+      </Link>
       <h1>{book.title}</h1>
 
       <h3>Book Description</h3>

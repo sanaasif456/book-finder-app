@@ -1,9 +1,24 @@
-import { createContext, useState } from "react";
+
+import { createContext, useState, useEffect } from "react";
 
 export const ReadingListContext = createContext();
 
 export function ReadingListProvider({ children }) {
-  const [readingList, setReadingList] = useState([]);
+
+  // Browser se saved books load karna
+  const [readingList, setReadingList] = useState(() => {
+    const savedBooks = localStorage.getItem("readingList");
+
+    return savedBooks ? JSON.parse(savedBooks) : [];
+  });
+
+  // Books ko localStorage mein save karna
+  useEffect(() => {
+    localStorage.setItem(
+      "readingList",
+      JSON.stringify(readingList)
+    );
+  }, [readingList]);
 
   function addToReadingList(book) {
     setReadingList((previousList) => {
@@ -18,6 +33,7 @@ export function ReadingListProvider({ children }) {
       return [...previousList, book];
     });
   }
+
   function removeFromReadingList(bookKey) {
     setReadingList((previousList) =>
       previousList.filter((book) => book.key !== bookKey)
